@@ -15,7 +15,7 @@ mas_grade = []
 
 def reading_grade():
     try:
-        with open("file.csv", encoding="utf-8") as csv_file:
+        with open("file_students.csv", encoding="utf-8") as csv_file:
             data = csv.reader(csv_file, dialect="dialect", delimiter=",")
             next(data)
             for row in data:
@@ -37,13 +37,13 @@ def average_grade(grads):
         return "No grades available"
 
 
-def get_student(name, age, grade):
-    with open("file.csv", "a", newline="", encoding="utf-8") as f:
+def add_student(name, age, grade):
+    with open("file_students.csv", "a", newline="", encoding="utf-8") as f:
         writen = csv.writer(f)
         writen.writerow([name, age, grade])
 
 
 if __name__ == "__main__":
     print(average_grade(reading_grade()))
-    get_student("Lena", 20, 5)
+    add_student("Lena", 20, 5)
     print(average_grade(reading_grade()))
