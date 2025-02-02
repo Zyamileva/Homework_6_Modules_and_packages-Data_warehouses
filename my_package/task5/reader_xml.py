@@ -19,7 +19,16 @@ def get_info_products() -> list:
 
 
 def update_product_quantity():
-    """Changes the quantity of the product in the XML file."""
+    """
+    Changes the quantity of the product in the XML file.
+
+    Args:
+        product_name (str): Name of the product to update
+        new_quantity (int): New quantity for the product
+
+    Returns:
+        bool: True if product was found and updated, False otherwise
+    """
     found = False
     product_name = input("Enter product name: ")
     for product in root.findall("product"):
