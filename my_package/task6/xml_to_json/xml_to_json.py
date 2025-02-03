@@ -5,16 +5,12 @@ JSON_FILE = "file_products.json"
 XML_FILE = "file_products.xml"
 
 
-def parse_element(element):
+def parse_element(element: dict):
     """Recursively parses the XML file and transforms its dictionary"""
     parsed_data = {}
 
     for child in element:
-        if len(child) > 0:
-            value = parse_element(child)
-        else:
-            value = child.text
-
+        value = parse_element(child) if len(child) > 0 else child.text
         if child.tag in parsed_data:
             if isinstance(parsed_data[child.tag], list):
                 parsed_data[child.tag].append(value)

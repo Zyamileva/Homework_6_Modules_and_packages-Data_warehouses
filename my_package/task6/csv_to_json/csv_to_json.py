@@ -6,6 +6,10 @@ CSV_FILE = "file_books.scv"
 
 
 def converter():
+    """Converts a CSV file to a JSON file.
+    Reads data from the CSV file specified by CSV_FILE, converts it to JSON format,
+    and writes the JSON data to the file specified by JSON_FILE.
+    """
     try:
         with open(CSV_FILE, "r", encoding="utf-8") as file_csv:
             reader = csv.DictReader(file_csv)

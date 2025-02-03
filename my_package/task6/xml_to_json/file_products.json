@@ -1,0 +1,16 @@
+{
+    "products": {
+        "product": [
+            {
+                "name": "Молоко",
+                "price": "25",
+                "quantity": "100"
+            },
+            {
+                "name": "Хліб",
+                "price": "10",
+                "quantity": "100"
+            }
+        ]
+    }
+}

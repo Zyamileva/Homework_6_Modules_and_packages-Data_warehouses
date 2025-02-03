@@ -1,7 +1,11 @@
 import requests
 
 
-def download_page(url, filename):
+def download_page(url: str, filename: str) -> None:
+    """Download a web page and save it to a file.
+    This function retrieves the content of a given URL and writes it to a specified file.
+    It handles potential HTTP errors and general request exceptions during the process.
+    """
     try:
         response = requests.get(url, timeout=5)
         response.raise_for_status()
@@ -16,5 +20,5 @@ def download_page(url, filename):
 
 if __name__ == "__main__":
     url_page = "https://www.russianfood.com/recipes/bytype/?fid=1023"
-    file_name = "russian_food_recipes.html"
+    file_name = "russian_food_recipe.html"
     download_page(url_page, file_name)
